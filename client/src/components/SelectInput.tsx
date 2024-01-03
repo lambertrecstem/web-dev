@@ -16,7 +16,6 @@ interface Props {
 const SelectInput = ({
   label,
   id,
-  placeholder,
   value,
   setValue,
   valueSaved,
