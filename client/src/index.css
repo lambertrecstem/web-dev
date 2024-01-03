@@ -1,0 +1,125 @@
+@import url("https://fonts.cdnfonts.com/css/product-sans");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&family=Roboto:wght@100;300;400&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .mobile-navbar {
+    @apply absolute w-full h-auto bg-primary text-center opacity-90 top-[-170%];
+  }
+  .transform-active-navbar {
+    @apply top-[17.3%];
+  }
+  .mobile-navbar-button {
+    @apply w-full h-[20%] bg-primary text-right top-0 rotate-0 p-[3%];
+  }
+  .transform-active-navbar-button {
+    @apply rotate-180;
+  }
+  .btn-filter {
+    @apply rounded-[21px] bg-primary border-2 border-secondary text-secondary px-8 py-2 mt-[5%];
+  }
+
+  .btn-nav-active {
+    @apply h-auto font-primarySub text-[1rem] text-secondary  font-light  border-b-[1px];
+  }
+  .btn-nav-unactive {
+    @apply h-auto font-primarySub text-[1rem] text-secondary  font-light  hover:border-b-[1px];
+  }
+
+  .btn-nav-active-mobile {
+    @apply m-6 text-[40pt]  h-auto font-secondary font-bold  text-secondary  ;
+  }
+  .btn-nav-unactive-mobile {
+    @apply m-6 text-[40pt]  h-auto font-secondary font-extralight  text-secondary   duration-300 transition-all hover:font-bold;
+  }
+
+  .reg-log-header {
+    @apply text-secondary font-primary text-[20pt];
+  }
+
+  .user-pwd-needacct-header {
+    @apply text-secondary font-secondary text-[15pt];
+  }
+  .reg-log-button {
+    @apply p-[2%] bg-primary mt-[5%] border-2 border-secondary text-secondary duration-500 transition-all hover:bg-secondary hover:text-redAccent hover:border-redAccent hover:border-2;
+  }
+
+  .reg-log-redirect {
+    @apply underline text-secondary duration-500 transition-all hover:text-greyAccent;
+  }
+}
+
+.inner-shadow {
+  box-shadow: inset 0 0 20px 0 rgba(0, 0, 0, 1);
+}
+
+.transform-navbar {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.transform-navbar-button {
+  -webkit-transition: all 2s ease;
+  -moz-transition: all 2s ease;
+  -o-transition: all 2s ease;
+  -ms-transition: all 2s ease;
+  transition: all 2s ease;
+}
+.testimonial {
+  position: relative;
+  left: 0%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 90%;
+  height: 100%;
+  opacity: 1;
+  justify-content: space-evenly;
+  z-index: 0;
+  transition: opacity 1s ease;
+  -webkit-transition: opacity 1s ease; /* For Webkit browsers */
+}
+.testimonial-mobile {
+  position: relative;
+  top: -17%;
+  left: 0%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 50%;
+  opacity: 1;
+  justify-content: space-evenly;
+  z-index: 0;
+  transition: opacity 1s ease;
+  -webkit-transition: opacity 1s ease; /* For Webkit browsers */
+}
+.testimonial-mobile.loaded {
+  animation: loadin 1s forwards;
+  -webkit-animation: loadin 1s forwards; /* For Webkit browsers */
+}
+.testimonial.loaded {
+  animation: loadin 1s forwards;
+  -webkit-animation: loadin 1s forwards; /* For Webkit browsers */
+}
+@keyframes loadin {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes loadin {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
