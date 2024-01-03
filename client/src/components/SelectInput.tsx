@@ -31,7 +31,6 @@ const SelectInput = ({
         <select
           className="row-start-2 h-[65%] w-[90%] rounded-lg mb-[5px] "
           id={id}
-          placeholder={placeholder}
           disabled={!valueSaved ? false : true}
           value={value.slug}
           onChange={(e) => {
