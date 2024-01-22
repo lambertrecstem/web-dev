@@ -10,8 +10,10 @@ const setActiveBG = (accentColor: string) => {
       return twMerge(` btn-filter`, `bg-greenAccent `);
     case "orange":
       return twMerge(` btn-filter`, `bg-orangeAccent `);
+    case "secondary":
+      return twMerge(` btn-filter`, `bg-secondary text-primary`);
   }
   return twMerge(` btn-filter`, `bg-greyAccent `);
 };
-  
+
 export default setActiveBG;

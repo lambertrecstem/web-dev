@@ -1,5 +1,5 @@
 import { useState, useEffect, createContext, ReactNode } from "react";
-import { Publication, Subject, subjects } from "../utils/filterButtons";
+import { Publication, Subject, subjects } from "../utils/managementInterfaces";
 import axios from "../api/axios";
 import { axiosPrivate } from "../api/axios";
 

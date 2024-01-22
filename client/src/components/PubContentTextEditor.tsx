@@ -29,7 +29,7 @@ export default function PubContentTextEditor({
   return (
     <>
       <Editor
-        apiKey="a4bnnq64rzmpi2s47p174a4k8r3qq1ouhy356hurgiv90eqw"
+        apiKey="sxc5e6rlgekpwirvhhrrpefd11q0cr5iyko1r1aqqcx8rodq"
         onInit={(_evt, editor) => (editorRef.current = editor)}
         init={{
           plugins:

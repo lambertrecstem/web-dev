@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import NavBar from "../../components/DashboardNavBar";
-import ReviewPublication from "../../components/ReviewPublication";
-import PublishPublication from "../../components/PublishPublication";
+
 import PublicationDataContext from "../../context/PublicationDataProvider";
+import PublishPublication from "../../components/PublishPublication";
+import ReviewPublication from "../../components/ReviewPublication";
 
 const ManagePublications = () => {
   const { page } = useContext(PublicationDataContext);

@@ -12,7 +12,7 @@ const OfficerCard = ({ position, fname, lname, bio, picture }: Props) => {
   const controls = useAnimation();
   return (
     <motion.div
-      className="bg-white shadow-lg rounded-lg overflow-hidden cursor-pointer w-[300px] h-[300px]"
+      className="bg-white shadow-lg rounded-lg overflow-hidden cursor-pointer w-[500px] h-[500px]"
       onMouseEnter={() => controls.start({ opacity: 1, y: -100 })}
       onMouseLeave={() => controls.start({ opacity: 0, y: 0 })}
     >

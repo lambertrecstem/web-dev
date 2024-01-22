@@ -1,13 +1,13 @@
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext } from "react";
-import { Publication } from "../utils/managementInterfaces";
-import PubCard from "./ManagePubCard";
-import PublicationDataContext from "../context/PublicationDataProvider";
+import { Testimonial } from "../utils/managementInterfaces";
+import TestimonialDataContext from "../context/TestimonialDataProvider";
+import ManageTestimonialCard from "./ManageTestimonialCard";
 
-const ReviewPublication = () => {
-  const { page, setFilter, publications, filter } = useContext(
-    PublicationDataContext
+const ReviewTestimonial = () => {
+  const { page, setFilter, testimonials, filter } = useContext(
+    TestimonialDataContext
   );
 
   return (
@@ -30,22 +30,16 @@ const ReviewPublication = () => {
             />
           </div>
           <div className="h-[100%] w-[50%] bg-transparent">
-            {publications.map((p: Publication) => {
-              if (filter === "") return <PubCard key={p._id} publication={p} />;
-              if (
-                p.cardDescription.includes(filter) ||
-                p.title.includes(filter) ||
-                p.date.includes(filter) ||
-                p.subject.includes(filter)
-              )
-                return <PubCard key={p._id} publication={p} />;
+            {testimonials.map((p: Testimonial) => {
+              if (filter === "") return <ManageTestimonialCard testimonial={p}></ManageTestimonialCard>;
+              if (p.author.includes(filter) || p.quote.includes(filter)) return <ManageTestimonialCard testimonial={p}></ManageTestimonialCard>;
               return null;
             })}
           </div>
-        </div>
+        </div> 
       ) : null}
     </>
   );
 };
 
-export default ReviewPublication;
+export default ReviewTestimonial;

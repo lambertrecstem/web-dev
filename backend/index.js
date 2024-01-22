@@ -31,6 +31,8 @@ app.use("/register", require("./routes/register"));
 app.use("/auth", require("./routes/auth"));
 app.use("/logout", require("./routes/logout"));
 app.use("/publications", require("./routes/publication"));
+app.use("/competitions", require("./routes/competition"));
+app.use("/testimonials", require("./routes/testimonial"));
 
 app.use("/officer", require("./routes/officer"));
 

@@ -29,20 +29,20 @@ const ContactSection = () => {
             CONTACT US
           </p>
           <div className="w-full h-full flex flex-row justify-between ">
-            <div className="grid grid-rows-[70%_30%] w-[50%] h-full  border-r-2 border-r-primary ">
+            <div className="grid grid-rows-[40%_30%] w-[50%] h-full  border-r-2 border-r-primary ">
               <div className="w-full h-auto  ">
                 <p className="text-[35pt] text-primary font-primary">
                   Help us make STEM more accessible.
                 </p>
               </div>
-              <div className="relative top-[30%] grid grid-cols-[33%_33%_33%] h-full w-[50%] ">
-                <div className=" grid w-[60px] h-[60px] place-items-center bg-redAccent text-[20pt] text-secondary p-4 rounded-full duration-500 transition-all  hover:text-redAccent hover:bg-secondary  hover:border-redAccent hover:border-[1px]">
+              <div className="relative top-[30%] grid grid-cols-[70px_70px_70px] gap-[20px] h-full w-[300px] ">
+                <div className=" grid  lg:w-[80px] lg:h-[80px] xl:w-[70px] xl:h-[70px] place-items-center bg-redAccent lg:text-[25pt] xl:text-[20pt] text-secondary p-4 rounded-full duration-500 transition-all  hover:text-redAccent hover:bg-secondary  hover:border-redAccent hover:border-[1px]">
                   <FontAwesomeIcon icon={faYoutube} />
                 </div>
-                <div className="grid w-[60px] h-[60px] place-items-center bg-redAccent text-[20pt] text-secondary p-4 rounded-full duration-500 transition-all  hover:text-redAccent hover:bg-secondary  hover:border-redAccent hover:border-[1px]">
+                <div className="grid lg:w-[80px] lg:h-[80px] xl:w-[70px] xl:h-[70px] place-items-center bg-redAccent lg:text-[25pt] xl:text-[20pt] text-secondary p-4 rounded-full duration-500 transition-all  hover:text-redAccent hover:bg-secondary  hover:border-redAccent hover:border-[1px]">
                   <FontAwesomeIcon icon={faInstagram} />
                 </div>
-                <div className="grid w-[60px] h-[60px] place-items-center bg-redAccent text-[20pt] text-secondary p-4 rounded-full duration-500 transition-all  hover:text-redAccent hover:bg-secondary  hover:border-redAccent hover:border-[1px]">
+                <div className="grid lg:w-[80px] lg:h-[80px] xl:w-[70px] xl:h-[70px] place-items-center bg-redAccent lg:text-[25pt] xl:text-[20pt] text-secondary p-4 rounded-full duration-500 transition-all  hover:text-redAccent hover:bg-secondary  hover:border-redAccent hover:border-[1px]">
                   <FontAwesomeIcon icon={faTiktok} />
                 </div>
               </div>

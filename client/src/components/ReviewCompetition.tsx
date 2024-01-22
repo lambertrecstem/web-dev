@@ -1,13 +1,13 @@
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext } from "react";
-import { Publication } from "../utils/managementInterfaces";
-import PubCard from "./ManagePubCard";
-import PublicationDataContext from "../context/PublicationDataProvider";
+import { Competition } from "../utils/managementInterfaces";
+import CompetitionDataContext from "../context/CompetitionDataProvider";
+import ManageCompCard from "./ManageCompCard";
 
-const ReviewPublication = () => {
-  const { page, setFilter, publications, filter } = useContext(
-    PublicationDataContext
+const ReviewCompetition = () => {
+  const { page, setFilter, competitions, filter } = useContext(
+    CompetitionDataContext
   );
 
   return (
@@ -30,15 +30,16 @@ const ReviewPublication = () => {
             />
           </div>
           <div className="h-[100%] w-[50%] bg-transparent">
-            {publications.map((p: Publication) => {
-              if (filter === "") return <PubCard key={p._id} publication={p} />;
+            {competitions.map((p: Competition) => {
+              if (filter === "") return <ManageCompCard key={p._id} competition={p} />;
               if (
                 p.cardDescription.includes(filter) ||
                 p.title.includes(filter) ||
                 p.date.includes(filter) ||
-                p.subject.includes(filter)
+                p.subject.includes(filter) ||
+                p.type.includes(filter)
               )
-                return <PubCard key={p._id} publication={p} />;
+                return <ManageCompCard key={p._id} competition={p} />;
               return null;
             })}
           </div>
@@ -48,4 +49,4 @@ const ReviewPublication = () => {
   );
 };
 
-export default ReviewPublication;
+export default ReviewCompetition;

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import PublicationDataContext from "../context/PublicationDataProvider";
-import { Publication, subjects } from "../utils/filterButtons";
+import { Publication, subjects } from "../utils/managementInterfaces";
 import setPublicationCardAccents from "../utils/setPublicationCardAccents";
 import { useNavigate } from "react-router-dom";
 import DataContext from "../context/DataProvider";

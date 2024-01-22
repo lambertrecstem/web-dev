@@ -5,35 +5,36 @@ const setPublicationCardAccents = (accentColor: string) => {
       `text-[17pt] text-redAccent font-primary `,
       `text-greyAccent`
     );
-  let buttonStyle: string = " w-[60%] py-[5%]  text-secondary font-light font-primarySub text-[14pt]  duration-500 hover:bg-secondary hover:text-redAccent hover:border-2 hover:border-redAccent bg-greyAccent";
-
+  let buttonStyle: string = " w-[175px] py-[10px]  text-secondary font-light font-primary text-[14pt]  duration-500 hover:bg-secondary hover:text-primary   bg-greyAccent";
+  let borderStyle: string =
+    "relative xl:w-[100%] xl:h-[350px] lg:w-[400px] lg:h-[400px] grid place-items-start  border-[5px] p-[35px]  border-black bg-primary rounded-[17px] border-greyAccent";
   
 
   if (accentColor === "red") {
     buttonStyle = twMerge(
-      ` w-[60%] py-[5%]  text-secondary font-light font-primarySub text-[14pt]  bg-redAccent duration-500 hover:bg-secondary hover:text-redAccent hover:border-2 hover:border-redAccent `,
+      ` w-[175px] py-[10px]  text-secondary font-light font-primary text-[14pt]  bg-redAccent duration-500 hover:bg-secondary hover:text-redAccent  hover:border-redAccent `,
       `bg-redAccent `
     );
   } else if (accentColor === "yellow") {
     buttonStyle = twMerge(
-      ` w-[60%] py-[5%]  text-secondary font-light font-primarySub text-[14pt]  bg-redAccent duration-500 hover:bg-secondary hover:text-redAccent hover:border-2 hover:border-redAccent `,
+      ` w-[175px] py-[10px]  text-secondary font-light font-primary text-[14pt]  bg-redAccent duration-500 hover:bg-secondary hover:text-redAccent  hover:border-redAccent `,
       `bg-yellowAccent `
     );
   } else if (accentColor === "green") {
     buttonStyle = twMerge(
-      ` w-[60%] py-[5%]  text-secondary font-light font-primarySub text-[14pt]  bg-redAccent duration-500 hover:bg-secondary hover:text-redAccent hover:border-2 hover:border-redAccent `,
+      ` w-[175px] py-[10px]  text-secondary font-light font-primary text-[14pt]  bg-redAccent duration-500 hover:bg-secondary hover:text-redAccent  hover:border-redAccent `,
       `bg-greenAccent `
     );
   } else if (accentColor === "orange") {
     buttonStyle = twMerge(
-      ` w-[60%] py-[5%]  text-secondary font-light font-primarySub text-[14pt]  bg-redAccent duration-500 hover:bg-secondary hover:text-redAccent hover:border-2 hover:border-redAccent `,
+      ` w-[175px] h-[10px]  text-secondary font-light font-primary text-[14pt]  bg-redAccent duration-500 hover:bg-secondary hover:text-redAccent  hover:border-redAccent `,
       `bg-orangeAccent `
     );
   }
 
   if (accentColor === "red") {
     dateStyle = twMerge(
-      `text-[17pt] text-redAccent font-primary `,
+      `text-[17pt] text-redAccent font-primary  `,
       `text-redAccent`
     );
   } else if (accentColor === "yellow") {
@@ -53,11 +54,38 @@ const setPublicationCardAccents = (accentColor: string) => {
     );
   }
 
+   if (accentColor === "red") {
+     borderStyle = twMerge(
+       `relative xl:w-[100%] xl:h-[350px] lg:w-[400px] lg:h-[400px] grid place-items-start  border-[5px] p-[35px]  border-black bg-primary rounded-[17px] `,
+       `border-redAccent`
+     );
+   } else if (accentColor === "yellow") {
+     borderStyle = twMerge(
+       `relative xl:w-[100%] xl:h-[350px] lg:w-[400px] lg:h-[400px] grid place-items-start  border-[5px] p-[35px]  border-black bg-primary rounded-[17px]  `,
+       `border-yellowAccent`
+     );
+   } else if (accentColor === "green") {
+     borderStyle = twMerge(
+       `relative xl:w-[100%] xl:h-[350px] lg:w-[400px] lg:h-[400px] grid place-items-start  border-[5px] p-[35px]  border-black bg-primary rounded-[17px] `,
+       `border-greenAccent`
+     );
+   } else if (accentColor === "orange") {
+     borderStyle = twMerge(
+       `relative xl:w-[100%] xl:h-[350px] lg:w-[400px] lg:h-[400px] grid place-items-start  border-[5px] p-[35px]  border-black bg-primary rounded-[17px] `,
+       `border-orangeAccent`
+     );
+   }
+  
+
+ 
+
 
 
   return {
     dateStyle,
     buttonStyle,
+    accentColor,
+    borderStyle
   };
 };
 

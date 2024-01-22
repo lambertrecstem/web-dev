@@ -1,7 +1,7 @@
 import { faCheck, faPencil } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { Subject, subjects } from "../utils/filterButtons";
+import { Subject, subjects } from "../utils/managementInterfaces";
 
 interface Props {
   label: string;

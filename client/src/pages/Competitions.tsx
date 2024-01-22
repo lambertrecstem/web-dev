@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
-import { Publication } from "../utils/managementInterfaces";
-import PubCard from "../components/PublicationCard";
-import filterButtons, { FilterButton } from "../utils/managementInterfaces";
+import { Competition } from "../utils/managementInterfaces";
+import { filterButtonsComp, FilterButton } from "../utils/managementInterfaces";
 import axios from "../api/axios";
+import CompetitionCard from "../components/CompetitionCard";
 
 const Publications = () => {
-  const [publications, setPublications] = useState<Publication[]>([]);
-  const [buttons, setButtons] = useState(filterButtons);
+  const [comps, setComps] = useState<Competition[]>([]);
+  const [buttons, setButtons] = useState(filterButtonsComp);
   const [filters, setFilters] = useState<string[]>([]);
+  console.log(filters);
 
   let isMounted = false;
   useEffect(() => {
@@ -22,9 +23,9 @@ const Publications = () => {
     const controller = new AbortController();
 
     await axios
-      .get<Publication[]>("/publications", { signal: controller.signal })
+      .get<Competition[]>("/competitions", { signal: controller.signal })
       .then((res) => {
-        setPublications([...res.data]);
+        setComps([...res.data]);
       })
       .catch((err) => console.log(err));
 
@@ -70,13 +71,35 @@ const Publications = () => {
       setButtons([...updated]);
       handleFilterUpdate(updated);
     }
+
+    if (btn.slug === "external" && buttons[buttons.length - 2].selected) {
+      updated = buttons.map((b) => {
+        if ("internal" == b.slug) return { ...b, selected: false };
+        if (b.slug === btn.slug) return { ...b, selected: true };
+        return b;
+      });
+      setButtons([...updated]);
+      handleFilterUpdate(updated);
+    } else if (
+      btn.slug === "internal" &&
+      buttons[buttons.length - 1].selected
+    ) {
+      updated = buttons.map((b) => {
+        if ("external" == b.slug) return { ...b, selected: false };
+        if (b.slug === btn.slug) return { ...b, selected: true };
+
+        return b;
+      });
+      setButtons([...updated]);
+      handleFilterUpdate(updated);
+    }
   };
 
   return (
     <div className="grid xl:grid-rows-[100px_120px_45px] md:grid-rows-[100px_100px] xs:grid-rows-[100px_160px]  sm:grid-rows-[100px_200px] w-full h-auto bg-primary pb-[50%] overflow-hidden">
       <div></div>
       <p className="w-auto h-auto text-[40pt] text-secondary font-primary xl:mx-[13%] lg:mx-[100px] xs:ml-[30px]">
-        publications
+        competitions
       </p>
       <div className="flex flex-row flex-nowrap sm:h-[150px] xs:h-[160px]  overflow-hidden gap-[10px] xs:w-full xs:flex-wrap md:h-[100px] xs:pl-[30px] xl:px-[13%] lg:px-[100px] h-[45px] w-full">
         {buttons.map((btn) => (
@@ -92,11 +115,18 @@ const Publications = () => {
         ))}
       </div>
       <div className="xs:px-[30px] md:grid-cols-[600px] sm:grid-cols-[350px] xs:grid-cols-[300px]   overflow-hidden py-[5%] lg:px-[100px] xl:px-[13%] grid xl:grid-cols-[50%_50%] lg:grid-cols-[400px_400px] gap-[65px] ">
-        {publications
-          .filter((p) => filters.length == 0 || filters.includes(p.slug))
-          .map((p) => {
-            return <PubCard key={p._id} publication={p} />;
-          })}
+        {filters.includes("external") || filters.includes("internal")
+          ? comps
+              .filter((p) => filters.length == 0 || filters.includes(p.type))
+              .filter((p) => filters.length == 1 || filters.includes(p.slug))
+              .map((p) => {
+                return <CompetitionCard key={p._id} competition={p} />;
+              })
+          : comps
+              .filter((p) => filters.length == 0 || filters.includes(p.slug))
+              .map((p) => {
+                return <CompetitionCard key={p._id} competition={p} />;
+              })}
       </div>
     </div>
   );

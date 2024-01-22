@@ -33,12 +33,12 @@ const Dashboard = () => {
       slug: "tests",
       urlEP: "/manage-testimonials",
     },
-    {
-      pageName: "EVENTS",
-      pageNameMobile: "Events",
-      slug: "events",
-      urlEP: "/manage-events",
-    },
+    // {
+    //   pageName: "EVENTS",
+    //   pageNameMobile: "Events",
+    //   slug: "events",
+    //   urlEP: "/manage-events",
+    // },
     {
       pageName: "COMPS",
       pageNameMobile: "Comps",

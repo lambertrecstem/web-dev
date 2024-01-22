@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { Publication } from "../utils/filterButtons";
+import { Publication } from "../utils/managementInterfaces";
 import { Officer } from "../components/OfficerCarousel";
 import axios from "../api/axios";
 

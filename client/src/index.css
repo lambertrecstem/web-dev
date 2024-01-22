@@ -19,7 +19,7 @@
     @apply rotate-180;
   }
   .btn-filter {
-    @apply rounded-[21px] bg-primary border-2 border-secondary text-secondary px-8 py-2 mt-[5%];
+    @apply rounded-[21px] bg-primary border-2 border-secondary font-primary text-secondary md:text-[12pt] xs:text-[10pt] md:h-[45px] md:w-[170px] md:min-w-[170px] xs:h-[35px] xs:w-[150px] xs:min-w-[150px];
   }
 
   .btn-nav-active {
@@ -50,6 +50,17 @@
   .reg-log-redirect {
     @apply underline text-secondary duration-500 transition-all hover:text-greyAccent;
   }
+}
+
+.hero-bg {
+  background: rgb(29,29,29);
+background: linear-gradient(90deg, rgba(29,29,29,1) 100%, rgba(26,23,23,0.12296983758700697) 16%, rgba(58,57,57,1) 35%, rgba(41,40,40,1) 51%, rgba(30,28,28,0.5359628770301624) 63%, rgba(20,20,20,1) 76%);
+}
+
+.stroke-text {
+    color: white; /* Color of the text */
+    -webkit-text-stroke-width: 2px; /* Width of the stroke */
+    -webkit-text-stroke-color: #ffffff; /* Color of the stroke */
 }
 
 .inner-shadow {

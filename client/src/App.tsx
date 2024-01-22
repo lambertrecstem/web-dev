@@ -20,6 +20,7 @@ import Publications from "./pages/Publications";
 import ViewPublication from "./pages/ViewPublication";
 import ComingSoon from "./components/ComingSoon";
 import Officers from "./pages/Officers";
+import Competitions from "./pages/Competitions";
 
 // Admin-specific Pages
 import Register from "./pages/admin/Register";
@@ -33,9 +34,11 @@ import ManageOfficers from "./pages/admin/ManageOfficers";
 
 // Assets
 import logo from "./assets/logo.png";
+import { CompetitionDataProvider } from "./context/CompetitionDataProvider";
+import ManageCompetitions from "./pages/admin/ManageCompetitions";
+import {TestimonialDataProvider} from "./context/TestimonialDataProvider";
 
 function App() {
-  console.log(screen.height)
   const MemberView = ({ children }: any) => {
     return (
       <div className="flex flex-col w-auto h-screen ">
@@ -82,7 +85,7 @@ function App() {
           path="competitions"
           element={
             <MemberView>
-              <ComingSoon />
+              <Competitions />
             </MemberView>
           }
         />
@@ -166,19 +169,7 @@ function App() {
             }
           />
 
-          <Route
-            path="manage-testimonials"
-            element={
-              <div className="w-auto h-screen bg-primary">
-                <img
-                  className="w-[200px] absolute duration-[10000ms] transition-all hover:rotate-[3600deg]"
-                  src={logo}
-                  alt=""
-                />
-                <ManageTestimonials />
-              </div>
-            }
-          />
+          
           <Route
             path="manage-pictures"
             element={
@@ -202,6 +193,26 @@ function App() {
               </OfficerDataProvider>
             }
           />
+          <Route
+            path="manage-comps"
+            element={
+              <CompetitionDataProvider>
+                <div className="w-auto h-screen bg-primary">
+                  <ManageCompetitions />
+                </div>
+              </CompetitionDataProvider>
+            }
+          />
+          <Route
+            path="manage-testimonials"
+            element={
+            <TestimonialDataProvider>
+                <div className="w-auto h-screen bg-primary">
+                  <ManageTestimonials />
+                </div>
+              </TestimonialDataProvider>
+            }
+          />
         </Route>
       </Route>
     </Routes>
@@ -209,3 +220,13 @@ function App() {
 }
 
 export default App;
+
+/*
+
+ <TestimonialDataProvider>
+                <div className="w-auto h-screen bg-primary">
+                  <ManageTestimonials />
+                </div>
+              </TestimonialDataProvider>
+
+*/

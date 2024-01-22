@@ -22,6 +22,11 @@ const setHoverColor = (accentColor: string) => {
           ` btn-filter duration-500 transition-all `,
           `hover:bg-orangeAccent `
         );
+      case "secondary":
+        return twMerge(
+          ` btn-filter duration-500 transition-all `,
+          `hover:bg-secondary hover:text-primary `
+        );
     }
     return twMerge(
       ` btn-filter duration-500 transition-all `,

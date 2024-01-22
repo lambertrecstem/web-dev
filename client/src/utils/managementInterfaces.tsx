@@ -14,6 +14,18 @@ export interface Publication {
   accent: string;
 }
 
+export interface Competition {
+  _id: number;
+  title: string;
+  date: string;
+  subject: string;
+  slug: string;
+  cardDescription: string;
+   redirectURL: string;
+  accent: string;
+  type: string;
+}
+
 export interface Subject {
   subject: string;
   accentColor: string;
@@ -26,6 +38,13 @@ export interface FilterButton {
   unactiveStyle: string;
   selected: boolean;
   slug: string;
+}
+
+export interface Testimonial {
+  _id: string;
+  author: string;
+  quote: string;
+  pictureURL: string;
 }
 
 export const subjects: Subject[] = [
@@ -44,8 +63,47 @@ export const subjects: Subject[] = [
   { subject: "Math/Physics", accentColor: "orange", slug: "maPh" },
 ];
 
+export const subjectsComp: Subject[] = [
+  {
+    subject: "All",
+    accentColor: "grey",
+    slug: "all",
+  },
+  {
+    subject: "Science/Research",
+    accentColor: "green",
+    slug: "sciRes",
+  },
+  { subject: "Engineering", accentColor: "red", slug: "eng" },
+  { subject: "Computer Science", accentColor: "yellow", slug: "cs" },
+  { subject: "Math/Physics", accentColor: "orange", slug: "maPh" },
+  { subject: "Internal", accentColor: "secondary", slug: "internal" },
+  { subject: "External", accentColor: "secondary", slug: "external" },
+];
+
 const filterButtons: FilterButton[] = [
   ...subjects.map((subject) => {
+    if (subject.slug === "all") {
+      return {
+        subject: subject,
+        slug: subject.slug,
+        activeStyle: setActiveBG(subject.accentColor),
+        unactiveStyle: setHoverColor(subject.accentColor),
+        selected: true,
+      };
+    }
+    return {
+      subject: subject,
+      slug: subject.slug,
+      activeStyle: setActiveBG(subject.accentColor),
+      unactiveStyle: setHoverColor(subject.accentColor),
+      selected: false,
+    };
+  }),
+];
+
+export const filterButtonsComp: FilterButton[] = [
+  ...subjectsComp.map((subject) => {
     if (subject.slug === "all") {
       return {
         subject: subject,
