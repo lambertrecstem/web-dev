@@ -96,12 +96,12 @@ const Publications = () => {
   };
 
   return (
-    <div className="grid xl:grid-rows-[100px_120px_45px] md:grid-rows-[100px_100px] xs:grid-rows-[100px_160px]  sm:grid-rows-[100px_200px] w-full h-auto bg-primary pb-[50%] overflow-hidden">
+    <div className="grid xl:grid-rows-[100px_120px_70px] md:grid-rows-[100px_100px] xs:grid-rows-[100px_160px_190px]  sm:grid-rows-[100px_200px] w-full h-auto bg-primary pb-[50%] overflow-hidden">
       <div></div>
       <p className="w-auto h-auto text-[40pt] text-secondary font-primary xl:mx-[13%] lg:mx-[100px] xs:ml-[30px]">
         competitions
       </p>
-      <div className="flex flex-row flex-nowrap sm:h-[150px] xs:h-[160px]  overflow-hidden gap-[10px] xs:w-full xs:flex-wrap md:h-[100px] xs:pl-[30px] xl:px-[13%] lg:px-[100px] h-[45px] w-full">
+      <div className="flex flex-row flex-nowrap sm:h-[150px] xs:h-[170px]  overflow-hidden gap-[10px] xs:w-full xs:flex-wrap md:h-[100px] xs:pl-[30px] xl:px-[13%] lg:px-[100px] xl:h-[100px] w-full">
         {buttons.map((btn) => (
           <button
             key={btn.slug}
