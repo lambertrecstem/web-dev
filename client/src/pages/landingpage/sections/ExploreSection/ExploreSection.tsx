@@ -1,6 +1,6 @@
 import ExploreCard from "./ExploreCard";
 
-const  ExploreSection = () => {
+const ExploreSection = () => {
   return (
     <div className="grid xs:h-[180%]  p-[5%] w-full xl:h-[125%] lg:h-[110%] lg:min-h-[973px] xs:min-h-[1500px] bg-primary overflow-hidden  ">
       <div className="relative  top-[7.5%] grid grid-rows-[10%_60%] place-items-center">
@@ -13,21 +13,21 @@ const  ExploreSection = () => {
           <ExploreCard
             title={"Competitions"}
             description={
-              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni voluptatum, earum dicta nobis facilis laudantium, reiciendis"
+              "Want to win awards and find new competitions? Check this database out, we have competitions ranging from in-house to international."
             }
             to="/competitions"
           />
           <ExploreCard
             title={"Events"}
             description={
-              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni voluptatum, earum dicta nobis facilis laudantium, reiciendis"
+              "Here at recSTEM we have many events and workshops. Check out this calendar to see all of our opportunities and events that we have."
             }
             to="/events"
           />
           <ExploreCard
             title={"Publications"}
             description={
-              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni voluptatum, earum dicta nobis facilis laudantium, reiciendis"
+              "Our member work diligently towards researching and publishing papers. Check them out along with our blog!"
             }
             to="/publications"
           />

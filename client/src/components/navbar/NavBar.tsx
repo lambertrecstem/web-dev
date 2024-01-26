@@ -15,7 +15,7 @@ export interface NavItem {
 // Constant navigation items
 const navItems: NavItem[] = [
   { pageName: "HOME", pageNameMobile: "Home", slug: "home", urlEP: "/" },
-  { pageName: "ABOUT", pageNameMobile: "About", slug: "about", urlEP: "/about" },
+  { pageName: "ABOUT", pageNameMobile: "About", slug: "about", urlEP: "/officers" },
   { pageName: "COMPETITIONS", pageNameMobile: "Competitions", slug: "competitions", urlEP: "/competitions" },
   { pageName: "PUBLICATIONS", pageNameMobile: "Publications", slug: "publications", urlEP: "/publications" },
 ];

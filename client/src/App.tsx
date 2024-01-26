@@ -66,14 +66,6 @@ function App() {
           }
         />
         <Route
-          path="about"
-          element={
-            <MemberView>
-              <ComingSoon />
-            </MemberView>
-          }
-        />
-        <Route
           path="officers"
           element={
             <MemberView>

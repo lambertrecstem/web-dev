@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import abtPic from "../../../assets/abtPic.png";
 
 const AboutSection = () => {
   return (
@@ -12,13 +13,12 @@ const AboutSection = () => {
               <p className="font-primary text-[30pt]">about us</p>
             </div>
             <p className="  overflow-scroll max-w-full max-h-full font-secondary text-[15pt]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
-              labore dolor reiciendis velit magni corrupti fugiat rerum dolorem
-              asperiores voluptatum libero perspiciatis odio perferendis vero
-              neque temporibus, eius ipsum unde dolorum? Eos deserunt molestiae,
-              quaerat ullam, reiciendis quod soluta consequatur quisquam
-              praesentium ex nobis. Vel laudantium repellendus natus veritatis
-              molestias!
+              Lambert RecSTEM is dedicated to fostering an early interest in
+              STEM through engaging workshops, active subcommittees, and many
+              volunteer opportunities, all geared towards inclusive learning
+              experiences. Our mission is to inspire individuals of ALL
+              backgrounds to pursue a career in STEM through accessible
+              education and hands-on opportunities.
             </p>
 
             <NavLink
@@ -37,19 +37,20 @@ const AboutSection = () => {
       <>
         <div className="absolute xs:hidden lg:grid w-full h-[55%] max-h-[500px] bg-secondary"></div>
         <div className="xs:hidden lg:grid w-full h-[100%] min-h-[816px] bg-secondary  grid-cols-2">
-          <div className="relative top-0 h-[70%] w-[70%] bg-greyAccent grid place-items-center "></div>
+          <div className="relative top-0 h-[70%] w-[70%]  grid place-items-center ">
+            <img src={abtPic} className="w-" alt="" />
+          </div>
           <div className="relative h-[70%] grid grid-rows-[25%_50%_25%] text-primary mr-[20%] ">
             <div className=" ">
               <p className="font-primary text-[70pt]">about us</p>
             </div>
             <p className="  overflow-y-scroll max-w-full max-h-full font-secondary text-[30pt]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
-              labore dolor reiciendis velit magni corrupti fugiat rerum dolorem
-              asperiores voluptatum libero perspiciatis odio perferendis vero
-              neque temporibus, eius ipsum unde dolorum? Eos deserunt molestiae,
-              quaerat ullam, reiciendis quod soluta consequatur quisquam
-              praesentium ex nobis. Vel laudantium repellendus natus veritatis
-              molestias!
+              Lambert RecSTEM is dedicated to fostering an early interest in
+              STEM through engaging workshops, active subcommittees, and many
+              volunteer opportunities, all geared towards inclusive learning
+              experiences. Our mission is to inspire individuals of ALL
+              backgrounds to pursue a career in STEM through accessible
+              education and hands-on opportunities.
             </p>
             <div className="absolute self-end text-nowrap bottom-14 ">
               <NavLink
